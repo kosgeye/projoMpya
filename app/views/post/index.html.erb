@@ -1,0 +1,10 @@
+<h1>Kenyan Diaspora News</h1>
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <%= post.subject %>
+      <%= post.link %>
+      <%= link_to post.subject, post.link %>
+    </li>
+  <% end %>
+</ul>
