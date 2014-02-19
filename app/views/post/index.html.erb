@@ -4,12 +4,16 @@
 <h1>Kenyan Diaspora News</h1>
 <ol>
   <% @posts.each do |post| %>
-    <li>      
+    <li>
+
+      <div class="vote">
+		<img alt="^" title="vote up"   src="/images/upvote.png" />
+	  </div>
+      
       <%= post.votes %>
       <%= link_to post.subject, post.link %>
       (<%= post.link.split(/^[^.]*./)[1] %>)
-      <span class="vote"> </span>
-	  <span class="vote on"> </span>
+      
     </li>
   <% end %>
 </ol>

@@ -1,12 +1,12 @@
-.vote {
-  display: block;
-  background: url('/images/upvote.png');
-  overflow: hidden;
-  width: 40px;
-  height: 25px;
-} 
+.vote
+{
+	width: 15px;
+	float:left;
+	margin: 5px;
+}
 
-
-.vote.on {
-  background-position: 0px -25px;
+.vote img
+{
+	display: block;
+	float: none; clear: both;
 }
