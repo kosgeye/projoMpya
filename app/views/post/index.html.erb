@@ -1,11 +1,15 @@
+<head>
+<%= stylesheet_link_tag "custom" %>
+</head>
 <h1>Kenyan Diaspora News</h1>
-<ul>
+<ol>
   <% @posts.each do |post| %>
-    <li>
-      <%= post.subject %>
-      <%= post.link %>
-      <%= link_to post.subject, post.link %>
+    <li>      
       <%= post.votes %>
+      <%= link_to post.subject, post.link %>
+      (<%= post.link.split(/^[^.]*./)[1] %>)
+      <span class="vote"> </span>
+	  <span class="vote on"> </span>
     </li>
   <% end %>
-</ul>
+</ol>
