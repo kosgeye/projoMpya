@@ -14,7 +14,7 @@
 
       <div class = "text">
       <%= link_to post.subject, post.link %>
-      (<%= post.link.split(/^[^.]*./)[1] %>)
+      (<%= URI.parse(post.link).host.gsub(/^www\./, '') %>)
       <%= post.votes %>
       </div>
       
