@@ -1,12 +1,14 @@
 .vote
 {
-	width: 15px;
+	right-margin: 30px;
 	float:left;
-	margin: 5px;
 }
 
 .vote img
 {
-	display: block;
-	float: none; clear: both;
+	margin-right: 30px;
+}
+
+.text
+{
 }

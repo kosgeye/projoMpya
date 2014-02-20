@@ -1,5 +1,10 @@
 class PostController < ApplicationController
   def new
+  	@post = Post.new
+  	@post.subject = params[:post][:subject]
+  	@post.link = params[:post][:link]
+  	@post.votes = 1;
+  	@post.save
   end
 
   def create
@@ -13,5 +18,11 @@ class PostController < ApplicationController
 
   def index
   	@posts = Post.all
+  end
+
+  def upvote
+  	@post = Post.find(params[:id])
+  	@post.votes = @post.votes + 1;
+  	@post.save
   end
 end

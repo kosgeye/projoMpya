@@ -1,18 +1,22 @@
 <head>
 <%= stylesheet_link_tag "custom" %>
 </head>
-<h1>Kenyan Diaspora News</h1>
+
+<h2>Kenyan Diaspora News</h2>
+
 <ol>
   <% @posts.each do |post| %>
     <li>
 
       <div class="vote">
-		<img alt="^" title="vote up"   src="/images/upvote.png" />
+      <%= link_to(image_tag("/images/upvote.png",:title => "upvote"), :action => 'upvote', :id => post.id) %>
 	  </div>
-      
-      <%= post.votes %>
+
+      <div class = "text">
       <%= link_to post.subject, post.link %>
       (<%= post.link.split(/^[^.]*./)[1] %>)
+      <%= post.votes %>
+      </div>
       
     </li>
   <% end %>
