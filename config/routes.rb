@@ -1,13 +1,12 @@
 ProjoMpya::Application.routes.draw do
-  get "post/new"
   get "post/create"
   get "post/edit"
   get "post/delete"
   get "post/upvote"
   get 'index' => 'post#index'
-  post 'post/create' => 'post#new'
-  patch 'post/new' => 'post#index'
-  patch 'post/create' => 'post#index'
+  get 'post/new' => 'post#new'
+  post 'post/new' => 'post#new'
+  post 'post/create' => 'post#create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

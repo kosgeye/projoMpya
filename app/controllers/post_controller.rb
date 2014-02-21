@@ -1,13 +1,15 @@
 class PostController < ApplicationController
   def new
   	@post = Post.new
+  end
+
+  def create
+  	@post = Post.new
   	@post.subject = params[:post][:subject]
   	@post.link = params[:post][:link]
   	@post.votes = 1;
   	@post.save
-  end
-
-  def create
+  	redirect_to '/index'
   end
 
   def edit
@@ -17,7 +19,9 @@ class PostController < ApplicationController
   end
 
   def index
-  	@posts = Post.all
+  	
+  	@posts = Post.order(votes: :desc)
+  	
   end
 
   def upvote

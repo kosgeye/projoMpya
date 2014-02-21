@@ -1,5 +1,7 @@
 <%= form_for @post, url: {action: "create"} do |f| %>
+  <%= f.label(:title) %>
   <%= f.text_field (:subject) %>
+  <%= f.label (:link) %>
   <%= f.text_field (:link) %>
   <%= f.submit "post" %>
 <% end %>
