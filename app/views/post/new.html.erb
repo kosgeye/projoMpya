@@ -1,7 +1,22 @@
-<%= form_for @post, url: {action: "create"} do |f| %>
-  <%= f.label(:title) %>
-  <%= f.text_field (:subject) %>
-  <%= f.label (:link) %>
-  <%= f.text_field (:link) %>
-  <%= f.submit "post" %>
+<%= 
+form_for @post, url: {action: "create"} do |f| %>
+	<div class="form">
+		<div> 
+		  	<%= f.label(:title) %>
+			<%= f.text_field (:subject) %>
+		</div>
+
+		<div>
+		  <%= f.label (:link) %>
+		  <%= f.text_field (:link) %>
+	  	</div>
+
+	  	<div class="button">
+ 		 <%= f.submit "Submit Post" %>
+  		</div>
+
+  	<div>
+
+  	
+
 <% end %>
